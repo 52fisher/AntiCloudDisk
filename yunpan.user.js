@@ -1,9 +1,11 @@
 // ==UserScript==
 // @name         多网盘直接下载
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  无需验证码以及等待时间,直接跳转至下载页面。注意：还是无法实现会员功能
 // @author       fisher
+// @updateURL    https://gitee.com/fisher52/Anti-CloudDisk/raw/master/js/yunpan.user.js
+// @downloadURL  https://gitee.com/fisher52/Anti-CloudDisk/raw/master/js/yunpan.user.js
 // @match        http://www.567pan.com/*
 // @match        http://www.xun-niu.com/*
 // @match        http://www.520file.com/*
