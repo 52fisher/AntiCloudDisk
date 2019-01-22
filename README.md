@@ -14,4 +14,4 @@
 
 
 ## 安装
-[下载地址](https://gitee.com/fisher52/Anti-CloudDisk/raw/master/js/yunpan.user.js)
+[下载地址](https://gitee.com/fisher52/Anti-CloudDisk/raw/master/yunpan.user.js)
