@@ -6,8 +6,10 @@
 // @author       fisher
 // @updateURL    https://gitee.com/fisher52/Anti-CloudDisk/raw/master/yunpan.user.js
 // @downloadURL  https://gitee.com/fisher52/Anti-CloudDisk/raw/master/yunpan.user.js
+// @match        https://www.567pan.com/*
 // @match        http://www.567pan.com/*
 // @match        http://www.xun-niu.com/*
+// @match        http://www.xiguapan.com/*
 // @match        http://www.520file.com/*
 // @match        http://www.eos-53.com/*
 // @match        http://www.ccchoo.com/*
@@ -50,23 +52,32 @@
         }
     };
     var urlLists = {
-        'www.eos-53.com': function() {//520盘
+        'www.eos-53.com': function() { //520盘
             disk.zV2Public().hookClick();
         },
-        'www.567pan.com': function() {//567盘
+        'www.567pan.com': function() { //567盘 自动跳转https
+            location.protocol == 'http:' ? location.href = 'https:' + location.href.substring(window.location.protocol.length) : null;
             disk.pdzpublic();
         },
-        'www.ccchoo.com': function() {//彩虹云
+        'www.ccchoo.com': function() { //彩虹云
             disk.pdzpublic();
         },
-        'page2.dfpan.com': function() {//yunfile
+        'page2.dfpan.com': function() { //yunfile
             disk.pdzpublic();
         },
-        'www.xun-niu.com': function() {//讯牛
+        'www.xun-niu.com': function() { //讯牛
             disk.pdzpublic();
-        },'www.mm222.cn':function(){//彩虹云别称
+        },
+        'www.mm222.cn': function() { //彩虹云别称
             disk.pdzpublic();
-        },'www.wodech.com':function(){//彩虹云别称
+        },
+        'www.wodech.com': function() { //彩虹云别称
+            disk.pdzpublic();
+        },
+        'fourpan.com': function() { //yunfile别名强制跳转
+            location.href = 'http://page2.dfpan.com/' + location.pathname;
+        },
+        'www.xiguapan.com': function() {
             disk.pdzpublic();
         }
     }
