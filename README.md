@@ -11,7 +11,7 @@
 - eos-53.com
 - ccchoo.com
 - dfpan.com
-
+- xiguapan.com
 
 ## 安装
 [下载地址](https://gitee.com/fisher52/Anti-CloudDisk/raw/master/yunpan.user.js)
