@@ -4,7 +4,7 @@
 
 ## 目前实现网盘名单及功能
 
-- yousuwp.com
+- <s>yousuwp.com</s>(已关闭)
 - 567pan.com
 - xun-niu.com
 - 520file.com
@@ -12,6 +12,7 @@
 - ccchoo.com
 - dfpan.com
 - xiguapan.com
+- dufile.com
 
 ## 安装
 [下载地址](https://gitee.com/fisher52/Anti-CloudDisk/raw/master/yunpan.user.js)
