@@ -21,14 +21,14 @@
 // @grant        none
 // ==/UserScript==
 (function() {
-    try{
+    try {
         var url = location.pathname,
-        rota = url.match(/(\w+)-(\d+)/)||url.match(/(files?)\/(\w+)/),
-        urlRota = ["file", "down", "down2"],
-        path = urlRota.indexOf(rota[1]),
-        num = rota[2];
-    }catch(e){
-       console.warn('当前方案未匹配');
+            rota = url.match(/(\w+)-(\d+)/) || url.match(/(files?)\/(\w+)/),
+            urlRota = ["file", "down", "down2"],
+            path = urlRota.indexOf(rota[1]),
+            num = rota[2];
+    } catch (e) {
+        console.warn('当前方案未匹配');
     }
     if (path == -1) {
         console.warn('当前方案未匹配');
@@ -41,9 +41,9 @@
             }
             return this;
         },
-        pdzpublic: function(s='-') {
+        pdzpublic: function(s = '-') {
             if (urlRota[path] == "file") {
-                window.location.href = "/down"+ s + num + ".html";
+                window.location.href = "/down" + s + num + ".html";
             }
             $(".viplist:eq(0)").hide();
             $("#down_box,#down_link,#down_boxc").show();
@@ -56,6 +56,13 @@
         },
         hookDP2: function() {
             eval(down_process2.toString().replace('var e=event||window.event;var ms=e.clientX+"*"+e.clientY;', 'try{var e=window.event||arguments.callee.caller.arguments[0]||event;var ms=e.clientX+"*"+e.clientY;}catch(e){console.log(e)}'));
+        },
+        hookTimer: function() {
+            var _timer = window.setTimeout;
+            window.setTimeout = function(a, timer) {
+                timer = 0;
+                _timer(a, 0);
+            }
         }
     };
     var urlLists = {
@@ -64,6 +71,7 @@
         },
         'www.567pan.com': function() { //567盘 自动跳转https
             location.protocol == 'http:' ? location.href = 'https:' + location.href.substring(window.location.protocol.length) : null;
+            disk.hookTimer();
             disk.pdzpublic();
         },
         'www.ccchoo.com': function() { //彩虹云
@@ -84,11 +92,13 @@
         'fourpan.com': function() { //yunfile别名强制跳转
             location.href = 'http://page2.dfpan.com/' + location.pathname;
         },
-        'www.xiguapan.com': function() {//西瓜盘
+        'www.xiguapan.com': function() { //西瓜盘
             disk.pdzpublic();
-        },'www.dufile.com':function(){
+        },
+        'www.dufile.com': function() {
             disk.zV2Public();
-        },'dufile.com':function(){ //DF盘允许根域名解析
+        },
+        'dufile.com': function() { //DF盘允许根域名解析
             disk.zV2Public();
         },
     }
