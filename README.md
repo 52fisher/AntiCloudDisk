@@ -5,7 +5,7 @@
 ## 目前实现网盘名单及功能
 
 - <s>yousuwp.com</s>(已关闭)
-- 567pan.com
+- 567file.com
 - xun-niu.com
 - 520file.com
 - eos-53.com
